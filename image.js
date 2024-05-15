@@ -1,0 +1,1 @@
+new Image().src="https://romain-pix-cyber.github.io/test.js";
